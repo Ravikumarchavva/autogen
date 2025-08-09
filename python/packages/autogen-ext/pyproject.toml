@@ -15,6 +15,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
+    "autogen-agentchat",
     "autogen-core==0.7.2",
 ]
 
@@ -100,7 +101,7 @@ semantic-kernel-core = [
 ]
 
 gemini = [
-    "google-genai>=1.0.0",
+    "google-genai>=1.29.0",
 ]
 
 semantic-kernel-google = [
@@ -203,3 +204,6 @@ mypy = "mypy --config-file ../../pyproject.toml --exclude src/autogen_ext/runtim
 [[tool.mypy.overrides]]
 module = "docker.*"
 ignore_missing_imports = true
+
+[tool.uv.sources]
+autogen-agentchat = { workspace = true }

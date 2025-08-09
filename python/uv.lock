@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.10, <3.13"
 resolution-markers = [
     "python_full_version >= '3.12.4' and sys_platform == 'darwin'",
@@ -576,6 +576,7 @@ name = "autogen-ext"
 version = "0.7.2"
 source = { editable = "packages/autogen-ext" }
 dependencies = [
+    { name = "autogen-agentchat" },
     { name = "autogen-core" },
 ]
 
@@ -740,6 +741,7 @@ requires-dist = [
     { name = "anthropic", marker = "extra == 'anthropic'", specifier = ">=0.48" },
     { name = "asyncio-atexit", marker = "extra == 'docker'", specifier = ">=1.0.1" },
     { name = "asyncio-atexit", marker = "extra == 'docker-jupyter-executor'", specifier = ">=1.0.1" },
+    { name = "autogen-agentchat", editable = "packages/autogen-agentchat" },
     { name = "autogen-agentchat", marker = "extra == 'file-surfer'", editable = "packages/autogen-agentchat" },
     { name = "autogen-agentchat", marker = "extra == 'magentic-one'", editable = "packages/autogen-agentchat" },
     { name = "autogen-agentchat", marker = "extra == 'video-surfer'", editable = "packages/autogen-agentchat" },
@@ -757,7 +759,7 @@ requires-dist = [
     { name = "docker", marker = "extra == 'docker'", specifier = "~=7.0" },
     { name = "docker", marker = "extra == 'docker-jupyter-executor'", specifier = "~=7.0" },
     { name = "ffmpeg-python", marker = "extra == 'video-surfer'" },
-    { name = "google-genai", marker = "extra == 'gemini'", specifier = ">=1.0.0" },
+    { name = "google-genai", marker = "extra == 'gemini'", specifier = ">=1.29.0" },
     { name = "graphrag", marker = "extra == 'graphrag'", specifier = ">=2.3.0" },
     { name = "grpcio", marker = "extra == 'grpc'", specifier = "~=1.70.0" },
     { name = "httpx", marker = "extra == 'http-tool'", specifier = ">=0.27.0" },
@@ -889,7 +891,7 @@ requires-dist = [
     { name = "uvicorn", marker = "extra == 'web'" },
     { name = "websockets" },
 ]
-provides-extras = ["web", "database"]
+provides-extras = ["database", "web"]
 
 [[package]]
 name = "autograd"
@@ -2585,7 +2587,7 @@ wheels = [
 
 [[package]]
 name = "google-genai"
-version = "1.11.0"
+version = "1.29.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "anyio" },
@@ -2593,12 +2595,13 @@ dependencies = [
     { name = "httpx" },
     { name = "pydantic" },
     { name = "requests" },
+    { name = "tenacity" },
     { name = "typing-extensions" },
     { name = "websockets" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/73/44/64c6c23724580add879cbcca81ffed500955c1c21850468cd4dcf9c62a03/google_genai-1.11.0.tar.gz", hash = "sha256:0643b2f5373fbeae945d0cd5a37d157eab0c172bb5e14e905f2f8d45aa51cabb", size = 160955, upload-time = "2025-04-16T23:34:37.979Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/9d/9b/a1e31252c4151da9403b357b47ae7ec5fc852eaf3486696eec211794001d/google_genai-1.29.0.tar.gz", hash = "sha256:a6b036ab032830f668d137b198c2a5abd8951a036d7a8480b61ce837c1c7f36b", size = 224207, upload-time = "2025-08-06T23:32:09.708Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/dc/9b/55f97203720cbda5a1c8e0460793914980e41c6ca4859fea735dd66d2c3a/google_genai-1.11.0-py3-none-any.whl", hash = "sha256:34fbe3c85419adbcddcb8222f99514596b3a69c80ff1a4ae30a01a763da27acc", size = 159687, upload-time = "2025-04-16T23:34:36.595Z" },
+    { url = "https://files.pythonhosted.org/packages/9c/33/9b22b0b3734f93655d0d28cfcd64496ef46dd68efe8ae19278f3b1297998/google_genai-1.29.0-py3-none-any.whl", hash = "sha256:8b64737de008d15ca4737e593913f88f656f0568544ab6901f768f0d1fd69bbf", size = 222591, upload-time = "2025-08-06T23:32:08.133Z" },
 ]
 
 [[package]]
